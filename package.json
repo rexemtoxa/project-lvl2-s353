@@ -1,6 +1,6 @@
 {
   "name": "gendiff_ar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gendiff two config files",
   "main": "index.js",
   "scripts": {
@@ -48,7 +48,7 @@
     "dist"
   ],
   "bin": {
-    "myFirsttest": "dist/bin/gendiff.js"
+    "gendiff": "dist/bin/gendiff.js"
   },
   "jest": {
     "testEnvironment": "node"
