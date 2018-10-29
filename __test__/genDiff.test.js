@@ -3,10 +3,10 @@ import genDiff from '../src';
 
 test('difference to be equal', () => {
   const dir = './__test__/__fixtures__';
-  const before = `${dir}/before.json`;
-  const after = `${dir}/after.json`;
+  const fileBefore = `${dir}/before.json`;
+  const fileAfter = `${dir}/after.json`;
   const result = fs.readFileSync(`${dir}/result`).toString();
 
-  const actual = genDiff(before, after);
+  const actual = genDiff(fileBefore, fileAfter);
   expect(actual).toBe(result);
 });
