@@ -3,25 +3,25 @@ import fs from 'fs';
 
 export default (firstFile, secondFile) => {
   const fileToString = file => fs.readFileSync(`${file}`).toString();
-  const before = JSON.parse(fileToString(firstFile));
-  const after = JSON.parse(fileToString(secondFile));
+  const fileBefore = JSON.parse(fileToString(firstFile));
+  const fileAfter = JSON.parse(fileToString(secondFile));
 
-  const changeData = data => `+ ${data}: ${after[data]}
-  - ${data}: ${before[data]}`;
+  const changeData = data => `+ ${data}: ${fileAfter[data]}
+  - ${data}: ${fileBefore[data]}`;
 
-  const removeData = data => `- ${data}: ${before[data]}`;
+  const removeData = data => `- ${data}: ${fileBefore[data]}`;
 
-  const addDate = data => `+ ${data}: ${after[data]}`;
+  const addDate = data => `+ ${data}: ${fileAfter[data]}`;
 
   const findDif = (data) => {
-    if (_.has(before, data) && _.has(after, data)) {
-      return before[data] === after[data]
-        ? `  ${data}: ${after[data]}` : changeData(data);
+    if (_.has(fileBefore, data) && _.has(fileAfter, data)) {
+      return fileBefore[data] === fileAfter[data]
+        ? `  ${data}: ${fileAfter[data]}` : changeData(data);
     }
-    return _.has(after, data) ? addDate(data) : removeData(data);
+    return _.has(fileAfter, data) ? addDate(data) : removeData(data);
   };
 
-  const keys = _.union(_.keys(before), _.keys(after));
+  const keys = _.union(_.keys(fileBefore), _.keys(fileAfter));
   return `{${keys.reduce((acc, elem) => `${acc}
   ${findDif(elem)}`, '')}
 }`;
