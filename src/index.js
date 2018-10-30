@@ -6,7 +6,6 @@ const fileToString = path => fs.readFileSync(`${path}`).toString();
 const getType = path => _.last(path.split('.'));
 const getData = path => parseData(fileToString(path), getType(path));
 
-
 const genDiff = (firstConfig, secondConfig) => {
   const obj1 = getData(firstConfig);
   const obj2 = getData(secondConfig);
@@ -19,7 +18,8 @@ const genDiff = (firstConfig, secondConfig) => {
   const addDate = key => `+ ${key}: ${obj2[key]}`;
 
   const findDif = (key) => {
-    if (_.has(obj1, key) && _.has(obj2, key)) {
+    const sharedKey = _.has(obj1, key) && _.has(obj2, key);
+    if (sharedKey) {
       return obj1[key] === obj2[key]
         ? `  ${key}: ${obj2[key]}` : changeData(key);
     }
