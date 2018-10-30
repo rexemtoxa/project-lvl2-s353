@@ -1,7 +1,7 @@
 import fs from 'fs';
 import genDiff from '../src';
 
-test('difference to be equal', () => {
+test('difference two JSON files', () => {
   const dir = './__test__/__fixtures__';
   const fileBefore = `${dir}/before.json`;
   const fileAfter = `${dir}/after.json`;

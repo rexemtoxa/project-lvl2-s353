@@ -1,10 +1,9 @@
 import _ from 'lodash';
-import fs from 'fs';
+import parseData from './parsers'
 
-export default (firstFile, secondFile) => {
-  const fileToString = file => fs.readFileSync(`${file}`).toString();
-  const fileBefore = JSON.parse(fileToString(firstFile));
-  const fileAfter = JSON.parse(fileToString(secondFile));
+const genDiff = (firstFile, secondFile) => {
+  const fileBefore = parseData(firstFile);
+  const fileAfter = parseData(secondFile);
 
   const changeData = data => `+ ${data}: ${fileAfter[data]}
   - ${data}: ${fileBefore[data]}`;
@@ -26,3 +25,4 @@ export default (firstFile, secondFile) => {
   ${findDif(elem)}`, '')}
 }`;
 };
+export default genDiff;
