@@ -6,3 +6,4 @@
 [show help](https://asciinema.org/a/bY0Ml2trQ5281Wl0GQ1690H5X)
 
 [generate difference two JSON files](https://asciinema.org/a/x7PoJxbChhXFl1aEXmZ5OUCc1)
+[generate difference two Yaml files](https://asciinema.org/a/eC16xXVUV5bG4CD1tXK41OfGR)

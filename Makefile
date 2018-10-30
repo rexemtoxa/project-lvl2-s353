@@ -10,5 +10,5 @@ lint:
 test:
 	npm test
 getDif:
-	npx babel-node -- src/bin/gendiff.js /home/anton/Documents/secondProject/__test__/__fixtures__/before.json /home/anton/Documents/secondProject/__test__/__fixtures__/after.json
+	npx babel-node -- src/bin/gendiff.js /home/anton/Documents/secondProject/__test__/__fixtures__/before.yml /home/anton/Documents/secondProject/__test__/__fixtures__/after.yml
 .PHONY: test

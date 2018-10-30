@@ -11,7 +11,7 @@ test('difference two JSON files', () => {
   expect(actual).toBe(result);
 });
 
-test('difference two yml files', () => {
+test('difference two yaml files', () => {
   const dir = './__test__/__fixtures__';
   const fileBefore = `${dir}/before.yml`;
   const fileAfter = `${dir}/after.yml`;
