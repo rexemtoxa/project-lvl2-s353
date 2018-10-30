@@ -8,15 +8,12 @@ const parseYaml = file => yaml.safeLoad(file);
 const fileToString = file => fs.readFileSync(`${file}`).toString();
 
 const parseManager = {
-  'json': file => parseJson(file),
-  'yml': file => parseYaml(file),
+  json: file => parseJson(file),
+  yml: file => parseYaml(file),
 };
 
-const parseData = path => {
+export default (path) => {
   const type = getTypeFile(path);
   const file = fileToString(path);
   return parseManager[type](file);
-}
-
-
-export default parseData;
+};
