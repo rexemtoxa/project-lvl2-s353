@@ -3,10 +3,6 @@ import fs from 'fs';
 import path from 'path';
 import parseData from './parsers';
 
-const fileToString = pathFile => fs.readFileSync(`${pathFile}`).toString();
-const getType = pathFile => path.extname(pathFile);
-const getData = pathFile => parseData(fileToString(pathFile), getType(pathFile));
-
 const isSharedKey = (key, obj1, obj2) => _.has(obj1, key) && _.has(obj2, key);
 const hasSameValue = (key, obj1, obj2) => obj1[key] === obj2[key];
 const isNewKey = (key, obj1, obj2) => _.has(obj2, key) && !_.has(obj1, key);
@@ -31,6 +27,10 @@ const propertyActions = [
 ];
 const getPropertyAction = (key, obj1, obj2) => (
   propertyActions.find(({ check }) => check(key, obj1, obj2)));
+
+const fileToString = pathFile => fs.readFileSync(`${pathFile}`).toString();
+const getType = pathFile => path.extname(pathFile);
+const getData = pathFile => parseData(fileToString(pathFile), getType(pathFile));
 
 const genDiff = (firstConfig, secondConfig) => {
   const obj1 = getData(firstConfig);
