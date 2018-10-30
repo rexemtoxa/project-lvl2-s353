@@ -19,8 +19,8 @@ const genDiff = (firstConfig, secondConfig) => {
   const addDate = key => `+ ${key}: ${obj2[key]}`;
 
   const findDif = (key) => {
-    const sharedKey = _.has(obj1, key) && _.has(obj2, key);
-    if (sharedKey) {
+    const keyIsShared = _.has(obj1, key) && _.has(obj2, key);
+    if (keyIsShared) {
       return obj1[key] === obj2[key]
         ? `  ${key}: ${obj2[key]}` : changeData(key);
     }
