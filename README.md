@@ -8,3 +8,5 @@
 [generate difference two JSON files](https://asciinema.org/a/x7PoJxbChhXFl1aEXmZ5OUCc1)
 
 [generate difference two Yaml files](https://asciinema.org/a/eC16xXVUV5bG4CD1tXK41OfGR)
+
+[generate difference two ini files](https://asciinema.org/a/sn5pa7IxmpawWbCfl81NXH2LO)
