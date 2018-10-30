@@ -1,10 +1,11 @@
 import _ from 'lodash';
 import fs from 'fs';
+import path from 'path';
 import parseData from './parsers';
 
-const fileToString = path => fs.readFileSync(`${path}`).toString();
-const getType = path => _.last(path.split('.'));
-const getData = path => parseData(fileToString(path), getType(path));
+const fileToString = pathFile => fs.readFileSync(`${pathFile}`).toString();
+const getType = pathFile => path.extname(pathFile);
+const getData = pathFile => parseData(fileToString(pathFile), getType(pathFile));
 
 const genDiff = (firstConfig, secondConfig) => {
   const obj1 = getData(firstConfig);
