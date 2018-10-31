@@ -30,4 +30,3 @@ test('difference two ini files', () => {
   const actual = genDiff(firstConfig, secondConfig);
   expect(actual).toBe(result);
 });
-

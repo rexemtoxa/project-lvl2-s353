@@ -1,6 +1,6 @@
 {
   "name": "gendiff_ar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "gendiff two config files",
   "main": "dist/index.js",
   "scripts": {

@@ -10,3 +10,5 @@
 [generate difference two Yaml files](https://asciinema.org/a/eC16xXVUV5bG4CD1tXK41OfGR)
 
 [generate difference two ini files](https://asciinema.org/a/sn5pa7IxmpawWbCfl81NXH2LO)
+
+[generate difference two complicated files](https://asciinema.org/a/fuibDUANUXb27C4StzkUpBwfs)
