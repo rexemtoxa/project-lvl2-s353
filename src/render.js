@@ -7,7 +7,6 @@ ${tab(depth + 1)}}`;
 
 const stringify = (value, depth) => (_.isObject(value) ? objToString(value, depth) : value);
 
-
 const render = (ast, level = 1) => {
   const propertyActions = {
     parent: (node, depth) => `  ${tab(depth)}${node.key}: ${render(node.children, depth + 2)}`,
