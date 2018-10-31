@@ -3,30 +3,30 @@ import genDiff from '../src';
 
 test('difference two JSON files', () => {
   const dir = './__tests__/__fixtures__';
-  const firstConfig = `${dir}/before.json`;
-  const secondConfig = `${dir}/after.json`;
+  const pathFirstConfig = `${dir}/before.json`;
+  const pathSecondConfig = `${dir}/after.json`;
   const result = fs.readFileSync(`${dir}/result`).toString();
 
-  const actual = genDiff(firstConfig, secondConfig);
+  const actual = genDiff(pathFirstConfig, pathSecondConfig);
   expect(actual).toBe(result);
 });
 
 test('difference two yaml files', () => {
   const dir = './__tests__/__fixtures__';
-  const firstConfig = `${dir}/before.yml`;
-  const secondConfig = `${dir}/after.yml`;
+  const pathFirstConfig = `${dir}/before.yml`;
+  const pathSecondConfig = `${dir}/after.yml`;
   const result = fs.readFileSync(`${dir}/result`).toString();
 
-  const actual = genDiff(firstConfig, secondConfig);
+  const actual = genDiff(pathFirstConfig, pathSecondConfig);
   expect(actual).toBe(result);
 });
 
 test('difference two ini files', () => {
   const dir = './__tests__/__fixtures__';
-  const firstConfig = `${dir}/before.ini`;
-  const secondConfig = `${dir}/after.ini`;
+  const pathFirstConfig = `${dir}/before.ini`;
+  const pathSecondConfig = `${dir}/after.ini`;
   const result = fs.readFileSync(`${dir}/result`).toString();
 
-  const actual = genDiff(firstConfig, secondConfig);
+  const actual = genDiff(pathFirstConfig, pathSecondConfig);
   expect(actual).toBe(result);
 });
