@@ -8,16 +8,16 @@ ${tab(depth + 1)}}`;
 const stringify = (value, depth) => (_.isObject(value) ? objToString(value, depth) : value);
 
 
-const render = (ast, depth = 1) => {
+const render = (ast, level = 1) => {
   const propertyActions = {
-    parent: node => `  ${tab(depth)}${node.key}: ${render(node.children, depth + 2)}`,
+    parent: (node, depth) => `  ${tab(depth)}${node.key}: ${render(node.children, depth + 2)}`,
     unchanged: (node, depth) => `  ${tab(depth)}${node.key}: ${stringify(node.value, depth)}`,
     changed: (node, depth) => `${tab(depth)}- ${node.key}: ${stringify(node.oldValue, depth)}
 ${tab(depth)}+ ${node.key}: ${stringify(node.newValue, depth)}`,
     added: (node, depth) => `${tab(depth)}+ ${node.key}: ${stringify(node.value, depth)}`,
     removed: (node, depth) => `${tab(depth)}- ${node.key}: ${stringify(node.value, depth)}`,
   };
-  return `{\n${ast.map(obj => propertyActions[obj.type](obj, depth)).join('\n')}\n${tab(depth - 1)}}`;
+  return `{\n${ast.map(obj => propertyActions[obj.type](obj, level)).join('\n')}\n${tab(level - 1)}}`;
 };
 
 export default render;
