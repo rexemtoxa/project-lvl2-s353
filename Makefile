@@ -9,5 +9,7 @@ lint:
 	npx eslint .	
 test:
 	npm test
+fixLint:
+	npx eslint --fix .
 
 .PHONY: test

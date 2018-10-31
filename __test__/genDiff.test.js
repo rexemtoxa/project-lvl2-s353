@@ -10,7 +10,7 @@ test('difference two JSON files', () => {
   const actual = genDiff(firstConfig, secondConfig);
   expect(actual).toBe(result);
 });
-
+/*
 test('difference two yaml files', () => {
   const dir = './__test__/__fixtures__';
   const firstConfig = `${dir}/before.yml`;
@@ -30,3 +30,4 @@ test('difference two ini files', () => {
   const actual = genDiff(firstConfig, secondConfig);
   expect(actual).toBe(result);
 });
+*/
