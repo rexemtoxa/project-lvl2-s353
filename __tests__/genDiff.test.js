@@ -60,3 +60,13 @@ test('difference two yaml files format plain', () => {
   const actual = genDiff(pathFirstConfig, pathSecondConfig, 'plain');
   expect(actual).toBe(result);
 });
+
+test('difference two Json files format JSON', () => {
+  const dir = './__tests__/__fixtures__';
+  const pathFirstConfig = `${dir}/before.json`;
+  const pathSecondConfig = `${dir}/after.json`;
+  const result = fs.readFileSync(`${dir}/resultJsonFormat`).toString();
+
+  const actual = genDiff(pathFirstConfig, pathSecondConfig, 'JSON');
+  expect(actual).toBe(result);
+});
