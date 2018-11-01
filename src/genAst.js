@@ -21,11 +21,11 @@ const propertyActions = [
   },
   {
     check: (key, obj1, obj2) => isNewKey(key, obj1, obj2),
-    process: (key, obj1, obj2) => ({ key, type: 'added', newValue: obj2[key] }),
+    process: (key, obj1, obj2) => ({ key, type: 'added', value: obj2[key] }),
   },
   {
     check: (key, obj1, obj2) => !isNewKey(key, obj1, obj2),
-    process: (key, obj1) => ({ key, type: 'removed', oldValue: obj1[key] }),
+    process: (key, obj1) => ({ key, type: 'removed', value: obj1[key] }),
   },
 ];
 

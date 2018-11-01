@@ -6,19 +6,22 @@ const objToString = (obj, depth = 0) => `{\n${tab(depth + 3)}${_.keys(obj).map(k
 ${tab(depth + 1)}}`;
 
 const stringify = (value, depth) => (_.isObject(value) ? objToString(value, depth) : value);
-const addEl = (node, depth) => `${tab(depth)}+ ${node.key}: ${stringify(node.newValue, depth)}`;
-const rmEl = (node, depth) => `${tab(depth)}- ${node.key}: ${stringify(node.oldValue, depth)}`;
-const chEl = (node, depth) => `${rmEl(node, depth)}\n${addEl(node, depth)}`;
+const toStringAction = (key, value, depth, sign) => `${tab(depth)}${sign} ${key}: ${stringify(value, depth)}`;
 
 const render = (ast, level = 1) => {
   const propertyActions = {
     parent: (node, depth) => `  ${tab(depth)}${node.key}: ${render(node.children, depth + 2)}`,
     unchanged: (node, depth) => `  ${tab(depth)}${node.key}: ${stringify(node.value, depth)}`,
-    changed: (node, depth) => chEl(node, depth),
-    added: (node, depth) => addEl(node, depth),
-    removed: (node, depth) => rmEl(node, depth),
+    added: (node, depth) => toStringAction(node.key, node.value, depth, '+'),
+    removed: (node, depth) => toStringAction(node.key, node.value, depth, '-'),
+    changed: (node, depth) => {
+      const before = toStringAction(node.key, node.oldValue, depth, '-');
+      const after = toStringAction(node.key, node.newValue, depth, '+');
+      return [before, after];
+    },
   };
-  return `{\n${ast.map(obj => propertyActions[obj.type](obj, level)).join('\n')}\n${tab(level - 1)}}`;
+  return `{\n${_.flatten(ast.map(obj => propertyActions[obj.type](obj, level))).join('\n')}
+${tab(level - 1)}}`;
 };
 
 export default render;
