@@ -10,7 +10,7 @@ const render = (ast, nameParent = '') => {
     removed: node => `Property '${nameParent}${node.key}' was removed`,
     changed: node => `Property '${nameParent}${node.key}' was updated. From ${stringify(node.oldValue)} to ${stringify(node.newValue)}`,
   };
-  return `${ast.map(obj => propertyActions[obj.type](obj)).join('\n')}`;
+  return `${_.flatten(ast.map(obj => propertyActions[obj.type](obj))).join('\n')}`;
 };
 
 export default render;
