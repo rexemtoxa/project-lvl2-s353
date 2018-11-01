@@ -13,5 +13,6 @@
 
 [generate difference two complicated files](https://asciinema.org/a/fuibDUANUXb27C4StzkUpBwfs)
 
+[generate difference two complicated files with options plain](https://asciinema.org/a/FN7lFOAw0I84N6LKJ2UwCcfTa)
 
-[generate difference two complicated files with options](https://asciinema.org/a/FN7lFOAw0I84N6LKJ2UwCcfTa)
+[generate difference two complicated files with option JSON](https://asciinema.org/a/eSbVraOMxloRdPhYtuXoDyiaI)
