@@ -3,8 +3,8 @@ import genDiff from '../src';
 
 test('difference two JSON files', () => {
   const dir = './__tests__/__fixtures__';
-  const pathFirstConfig = `${dir}/beforeDefaultFormat.json`;
-  const pathSecondConfig = `${dir}/afterDefaultFormat.json`;
+  const pathFirstConfig = `${dir}/before.json`;
+  const pathSecondConfig = `${dir}/after.json`;
   const result = fs.readFileSync(`${dir}/resultDefaultFormat`).toString();
 
   const actual = genDiff(pathFirstConfig, pathSecondConfig);
@@ -13,8 +13,8 @@ test('difference two JSON files', () => {
 
 test('difference two yaml files', () => {
   const dir = './__tests__/__fixtures__';
-  const pathFirstConfig = `${dir}/beforeDefaultFormat.yml`;
-  const pathSecondConfig = `${dir}/afterDefaultFormat.yml`;
+  const pathFirstConfig = `${dir}/before.yml`;
+  const pathSecondConfig = `${dir}/after.yml`;
   const result = fs.readFileSync(`${dir}/resultDefaultFormat`).toString();
 
   const actual = genDiff(pathFirstConfig, pathSecondConfig);
@@ -23,8 +23,8 @@ test('difference two yaml files', () => {
 
 test('difference two ini files', () => {
   const dir = './__tests__/__fixtures__';
-  const pathFirstConfig = `${dir}/beforeDefaultFormat.ini`;
-  const pathSecondConfig = `${dir}/afterDefaultFormat.ini`;
+  const pathFirstConfig = `${dir}/before.ini`;
+  const pathSecondConfig = `${dir}/after.ini`;
   const result = fs.readFileSync(`${dir}/resultDefaultFormat`).toString();
 
   const actual = genDiff(pathFirstConfig, pathSecondConfig);
