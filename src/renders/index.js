@@ -1,4 +1,4 @@
-import renderDefault from './renderDefault';
+import renderDefault from './renderTree';
 import renderPlain from './renderPlain';
 
 const manager = {
