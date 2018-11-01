@@ -1,22 +1,16 @@
+import _ from 'lodash';
 
-const render = (ast) =>`Section 'common'
-Property 'common.setting1' wasn't changed
-Property 'common.setting2' was removed
-Property 'common.setting3' was updated. From true to [complex value]
-Section 'common.setting6'
-Property 'common.setting6.key' wasn't changed
-Property 'common.setting6.ops' was added with value: vops
-Property 'common.follow' was added with value: false
-Property 'common.setting4' was added with value: blah blah
-Property 'common.setting5' was added with value: [complex value]
-Section 'group1'
-Property 'group1.baz' was updated. From bas to bars
-Property 'group1.foo' wasn't changed
-Property 'group1.nest' was updated. From [complex value] to str
-Property 'group2' was removed
-Property 'group3' was added with value: [complex value]`;
+const stringify = value => (_.isObject(value) ? '[complex value]' : value);
 
-
-
+const render = (ast, nameParent = '') => {
+  const propertyActions = {
+    parent: node => `Section '${nameParent}${node.key}'\n${render(node.children, `${nameParent}${node.key}.`)}`,
+    unchanged: node => `Property '${nameParent}${node.key}' wasn't changed`,
+    added: node => `Property '${nameParent}${node.key}' was added with value: ${stringify(node.value)}`,
+    removed: node => `Property '${nameParent}${node.key}' was removed`,
+    changed: node => `Property '${nameParent}${node.key}' was updated. From ${stringify(node.oldValue)} to ${stringify(node.newValue)}`,
+  };
+  return `${ast.map(obj => propertyActions[obj.type](obj)).join('\n')}`;
+};
 
 export default render;
