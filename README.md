@@ -12,3 +12,6 @@
 [generate difference two ini files](https://asciinema.org/a/sn5pa7IxmpawWbCfl81NXH2LO)
 
 [generate difference two complicated files](https://asciinema.org/a/fuibDUANUXb27C4StzkUpBwfs)
+
+
+[generate difference two complicated files with options](https://asciinema.org/a/FN7lFOAw0I84N6LKJ2UwCcfTa)
