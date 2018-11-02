@@ -1,8 +1,8 @@
-import renderSings from './renderSigns';
+import renderSigns from './renderSigns';
 import renderPlain from './renderPlain';
 
 const manager = {
-  signs: renderSings,
+  signs: renderSigns,
   plain: renderPlain,
   JSON: JSON.stringify,
 };
