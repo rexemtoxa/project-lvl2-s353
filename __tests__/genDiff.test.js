@@ -5,7 +5,7 @@ test('difference two JSON files format def', () => {
   const dir = './__tests__/__fixtures__';
   const pathFirstConfig = `${dir}/before.json`;
   const pathSecondConfig = `${dir}/after.json`;
-  const result = fs.readFileSync(`${dir}/resultDefaultFormat`).toString();
+  const result = fs.readFileSync(`${dir}/resultSingsFormat`).toString();
 
   const actual = genDiff(pathFirstConfig, pathSecondConfig);
   expect(actual).toBe(result);
@@ -15,7 +15,7 @@ test('difference two yaml files format def', () => {
   const dir = './__tests__/__fixtures__';
   const pathFirstConfig = `${dir}/before.yml`;
   const pathSecondConfig = `${dir}/after.yml`;
-  const result = fs.readFileSync(`${dir}/resultDefaultFormat`).toString();
+  const result = fs.readFileSync(`${dir}/resultSingsFormat`).toString();
 
   const actual = genDiff(pathFirstConfig, pathSecondConfig);
   expect(actual).toBe(result);
@@ -25,7 +25,7 @@ test('difference two ini files format def', () => {
   const dir = './__tests__/__fixtures__';
   const pathFirstConfig = `${dir}/before.ini`;
   const pathSecondConfig = `${dir}/after.ini`;
-  const result = fs.readFileSync(`${dir}/resultDefaultFormat`).toString();
+  const result = fs.readFileSync(`${dir}/resultSingsFormat`).toString();
 
   const actual = genDiff(pathFirstConfig, pathSecondConfig);
   expect(actual).toBe(result);

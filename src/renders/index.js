@@ -1,10 +1,10 @@
-import renderDefault from './renderTree';
+import renderPlusMinus from './renderPlusMinus';
 import renderPlain from './renderPlain';
 
 const manager = {
-  default: renderDefault,
+  signs: renderPlusMinus,
   plain: renderPlain,
   JSON: JSON.stringify,
 };
 
-export default (ast, format = 'default') => manager[format](ast);
+export default (ast, format = 'signs') => manager[format](ast);
