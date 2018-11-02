@@ -1,7 +1,7 @@
 import fs from 'fs';
 import genDiff from '../src';
 
-test('difference two JSON files format def', () => {
+test('difference two JSON files format sings', () => {
   const dir = './__tests__/__fixtures__';
   const pathFirstConfig = `${dir}/before.json`;
   const pathSecondConfig = `${dir}/after.json`;
@@ -11,7 +11,7 @@ test('difference two JSON files format def', () => {
   expect(actual).toBe(result);
 });
 
-test('difference two yaml files format def', () => {
+test('difference two yaml files format sings', () => {
   const dir = './__tests__/__fixtures__';
   const pathFirstConfig = `${dir}/before.yml`;
   const pathSecondConfig = `${dir}/after.yml`;
@@ -21,7 +21,7 @@ test('difference two yaml files format def', () => {
   expect(actual).toBe(result);
 });
 
-test('difference two ini files format def', () => {
+test('difference two ini files format sings', () => {
   const dir = './__tests__/__fixtures__';
   const pathFirstConfig = `${dir}/before.ini`;
   const pathSecondConfig = `${dir}/after.ini`;

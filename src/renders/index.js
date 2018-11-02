@@ -1,8 +1,8 @@
-import renderPlusMinus from './renderPlusMinus';
+import renderSings from './renderSigns';
 import renderPlain from './renderPlain';
 
 const manager = {
-  signs: renderPlusMinus,
+  signs: renderSings,
   plain: renderPlain,
   JSON: JSON.stringify,
 };
