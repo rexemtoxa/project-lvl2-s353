@@ -23,7 +23,8 @@ This package is also available in npm repository.
 
 bash
 ```
-$ npx babel-node -- src/bin/gendiff.js <path to file one> <path to file two> -f <format output>
+$ npx babel-node -- src/bin/gendiff.js <path to first file> <path to second file> -f <format output>
+$ npx babel-node -- src/bin/gendiff.js -h
 ```
 * test
 
