@@ -3,16 +3,31 @@
 [![Build Status](https://travis-ci.com/rexemtoxa/project-lvl2-s353.svg?branch=master)](https://travis-ci.com/rexemtoxa/project-lvl2-s353)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5dc770f1a9a86035a9ca/maintainability)](https://codeclimate.com/github/rexemtoxa/project-lvl2-s353/maintainability)
 
-[show help](https://asciinema.org/a/bY0Ml2trQ5281Wl0GQ1690H5X)
+This is study project to learn testing framework JEST. gendiff - is a CLI utility just like diff on the LINUX.
+It has 3 different format output 'signs', 'plain', 'JSON'.
 
-[generate difference two JSON files](https://asciinema.org/a/x7PoJxbChhXFl1aEXmZ5OUCc1)
+### Install
+clone this repo
 
-[generate difference two Yaml files](https://asciinema.org/a/eC16xXVUV5bG4CD1tXK41OfGR)
+bash
+```
+$ git clone git@github.com:rexemtoxa/project-lvl2-s353.git
+$ cd project-lvl2-s353
+$ make install
+$ make build
+```
+This package is also available in npm repository.
 
-[generate difference two ini files](https://asciinema.org/a/sn5pa7IxmpawWbCfl81NXH2LO)
+### Run
+* usage app
 
-[generate difference two complicated files](https://asciinema.org/a/fuibDUANUXb27C4StzkUpBwfs)
+bash
+```
+$ npx babel-node -- src/bin/gendiff.js <path to file one> <path to file two> -f <format output>
+```
+* test
 
-[generate difference two complicated files with options plain](https://asciinema.org/a/FN7lFOAw0I84N6LKJ2UwCcfTa)
-
-[generate difference two complicated files with option JSON](https://asciinema.org/a/eSbVraOMxloRdPhYtuXoDyiaI)
+bash
+```
+make test
+```

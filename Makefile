@@ -2,7 +2,7 @@
 install:
 	npm install
 start:
-	npx babel-node -- src/bin/gendiff.js -f JSON /home/anton/Documents/secondProject/__tests__/__fixtures__/before.ini /home/anton/Documents/secondProject/__tests__/__fixtures__/after.ini
+	npx babel-node -- src/bin/gendiff.js ./__tests__/__fixtures__/before.ini ./__tests__/__fixtures__/after.ini
 publish:
 	npm run prepublishOnly
 lint:
@@ -11,5 +11,8 @@ test:
 	npm test
 fixLint:
 	npx eslint --fix .
+
+buld:
+	npm run buld
 
 .PHONY: test
